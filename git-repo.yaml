@@ -8,6 +8,4 @@ spec:
   url: https://github.com/anchorlytics/flux
   ref:
     branch: main
-  secretRef:
-    name: flux-github-auth
   interval: 5m0s
