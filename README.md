@@ -1,2 +1,3 @@
 # flux
-Kubernetes  cluster state managed by flux
+Kubernetes cluster state managed by flux
+

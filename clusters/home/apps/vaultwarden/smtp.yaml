@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: smtp
+  namespace: vaultwarden
+stringData:
+  smtp:
+    from: vaultwarden@seanho.com
+    host: smtp.mailgun.org
+    username: postmaster@sandbox7d21fcf3eef042728dc126b48e68baef.mailgun.org
+    password: 5390e7a1a29d4f029207ca201f7412c7

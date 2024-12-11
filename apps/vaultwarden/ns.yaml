@@ -1,0 +1,7 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  # override this in kustomize.yaml to apply to everyone
+  name: vaultwarden
+
