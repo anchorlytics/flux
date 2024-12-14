@@ -2,13 +2,13 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: flux
+  name: infra-controllers
   namespace: flux-system
 spec:
   sourceRef:
     kind: GitRepository
     name: flux
-  path: ./clusters/int/
+  path: ./clusters/home/infra/controllers
   decryption:
     provider: sops
     secretRef:
