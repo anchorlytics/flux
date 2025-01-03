@@ -4,22 +4,23 @@ kind: ConfigMap
 metadata:
   name: helm-values
 data:
-  vaultwarden:
-    allowSignups: false
-    allowInvitation: false
-    passwordHintsAllowed: false
-    enableSends: false
-    emergency: false
-    admin:
+  values.yaml:
+    vaultwarden:
+      allowSignups: false
+      allowInvitation: false
+      passwordHintsAllowed: false
+      enableSends: false
+      emergency: false
+      admin:
+        enabled: true
+        existingSecret: vaultwarden-pw
+    ingress:
       enabled: true
-      existingSecret: vaultwarden-pw
-  ingress:
-    enabled: true
-    host: pw.home.seanho.com
-    annotations:
-      cert-manager.io/cluster-issuer: le-prod
-  persistence:
-    enabled: true
-    size: 2Gi
-    storageClass: shared-ssd
+      host: pw.home.seanho.com
+      annotations:
+        cert-manager.io/cluster-issuer: le-prod
+      persistence:
+      enabled: true
+      size: 2Gi
+      storageClass: shared-ssd
 
