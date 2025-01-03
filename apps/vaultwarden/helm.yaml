@@ -7,7 +7,7 @@ spec:
   interval: 10m
   chart:
     spec:
-      interval: 2hh
+      interval: 2h
       sourceRef:
         kind: HelmRepository
         name: vaultwarden
