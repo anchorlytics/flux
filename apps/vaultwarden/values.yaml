@@ -4,7 +4,7 @@ kind: ConfigMap
 metadata:
   name: helm-values
 data:
-  values.yaml:
+  values.yaml: |
     vaultwarden:
       allowSignups: false
       allowInvitation: false
