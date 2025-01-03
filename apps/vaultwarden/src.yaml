@@ -7,5 +7,3 @@ metadata:
 spec:
   interval: 1d
   url: https://gissilabs.github.io/charts
-  ref:
-    semver: "^1.2.4"

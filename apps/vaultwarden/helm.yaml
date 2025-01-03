@@ -4,10 +4,14 @@ kind: HelmRelease
 metadata:
   name: vaultwarden
 spec:
-  interval: 10m
-  chartRef:
-    kind: HelmRepository
-    name: vaultwarden
+  chart:
+    spec:
+      interval: 10m
+      sourceRef:
+        kind: HelmRepository
+        name: vaultwarden
+      chart: vaultwarden
+      version: "1.2.4"
   valuesFrom:
   - kind: ConfigMap
     name: helm-values
