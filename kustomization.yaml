@@ -1,0 +1,10 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- flux-src.yaml
+#- storage/controllers/flux.yaml
+#- storage/configs/flux.yaml
+#- infra/controllers/flux.yaml
+#- infra/configs/flux.yaml
+- apps/flux.yaml
+
