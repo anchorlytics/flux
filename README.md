@@ -6,7 +6,6 @@ Single cluster, installing storage first, then infrastructure, then apps.
 `kubectl apply -k .`
 
 ## Directory Structure
-+ `.sops.yaml`: **pubkey** for CLI encryption (privkey is in ~/.config/sops/age/keys.txt)
 + `kustomize.yaml`: points to all **flux** Kustomizations
 + `apps/`:
   + `flux.yaml`: flux Kustomization: **decrypts** and points to `kustomization.yaml`
@@ -26,3 +25,10 @@ Single cluster, installing storage first, then infrastructure, then apps.
   + infra/configs/: same for resources using above CRDs
   + storage/controllers/: same for storage system (e.g., rook-ceph)
   + storage/configs/: same for resources using above CRDs
+
+## Encryption
++ For flux Kustomize controller:
+  + Secret `flux-sops`, key `sops.agekey`: **privkey** for decrypt
++ For CLI `sops`:
+  + `.sops.yaml`: **pubkey** for encrypt
+  + `~/.config/sops/age/keys.txt`: **privkey** for decrypt
