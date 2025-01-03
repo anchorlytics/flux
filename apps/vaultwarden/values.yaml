@@ -25,7 +25,7 @@ data:
       annotations:
         cert-manager.io/cluster-issuer: le-prod
       persistence:
-      enabled: true
-      size: 2Gi
-      storageClass: shared-ssd
+        enabled: true
+        size: 2Gi
+        storageClass: shared-ssd
 
