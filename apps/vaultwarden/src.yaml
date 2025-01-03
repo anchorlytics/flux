@@ -1,11 +1,11 @@
-# https://lab.frogg.it/doca/vaultwarden-helm
+# https://github.com/gissilabs/charts/tree/master/vaultwarden
 ---
-apiVersion: source.toolkit.fluxcd.io/v1beta2
-kind: OCIRepository
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
 metadata:
   name: vaultwarden
 spec:
-  interval: 10m
-  url: oci://registry-1.docker.io/captnbp/vaultwarden
+  interval: 1d
+  url: https://gissilabs.github.io/charts
   ref:
-    semver: "^0.1.8"
+    semver: "^1.2.4"

@@ -1,0 +1,18 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: storage-controllers
+  namespace: flux-system
+spec:
+  sourceRef:
+    kind: GitRepository
+    name: flux
+  path: /storage/controllers/
+  decryption:
+    provider: sops
+    secretRef:
+      name: flux-sops
+  interval: 1h
+  prune: true
+  wait: true

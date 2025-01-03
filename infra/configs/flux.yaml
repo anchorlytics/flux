@@ -2,16 +2,19 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: flux
+  name: infra-configs
   namespace: flux-system
 spec:
   sourceRef:
     kind: GitRepository
     name: flux
-  path: ./clusters/int/
+  path: /infra/configs/
   decryption:
     provider: sops
     secretRef:
       name: flux-sops
-  interval: 10m0s
+  interval: 1h
   prune: true
+  wait: true
+  dependsOn:
+  - name: infra-controllers
