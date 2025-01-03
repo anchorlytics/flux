@@ -18,6 +18,10 @@ data:
     ingress:
       enabled: true
       host: pw.home.seanho.com
+      tls:
+      - secretName: vaultwarden-tls
+        hosts:
+        - pw.home.seanho.com
       annotations:
         cert-manager.io/cluster-issuer: le-prod
       persistence:
