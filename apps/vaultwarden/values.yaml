@@ -10,7 +10,8 @@ data:
       allowInvitation: false
       passwordHintsAllowed: false
       enableSends: false
-      emergency: false
+      emergency:
+        enabled: false
       admin:
         enabled: true
         existingSecret: vaultwarden-pw
