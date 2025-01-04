@@ -28,4 +28,5 @@ data:
         enabled: true
         size: 2Gi
         storageClass: shared-ssd
+        accessMode: ReadWriteOnce
 
