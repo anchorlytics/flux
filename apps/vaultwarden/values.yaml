@@ -24,9 +24,9 @@ data:
         - pw.home.seanho.com
       annotations:
         cert-manager.io/cluster-issuer: le-prod
-      persistence:
-        enabled: true
-        size: 2Gi
-        storageClass: shared-ssd
-        accessMode: ReadWriteOnce
+    persistence:
+      enabled: true
+      size: 2Gi
+      storageClass: shared-ssd
+      accessMode: ReadWriteOnce
 
