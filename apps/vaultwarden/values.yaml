@@ -6,15 +6,22 @@ metadata:
 data:
   values.yaml: |
     vaultwarden:
+      domain: "https://pw.home.seanho.com"
       allowSignups: false
-      allowInvitation: false
       passwordHintsAllowed: false
       enableSends: false
+      emailChangeAllowed: false
       emergency:
         enabled: false
       admin:
         enabled: true
         existingSecret: vaultwarden-pw
+      smtp:
+        enabled: true
+        existingSecret: vaultwarden-pw
+        host: smtp.mailgun.org
+        from: vaultwarden@seanho.com
+        heloName: pw.home.seanho.com
     ingress:
       enabled: true
       host: pw.home.seanho.com
@@ -28,5 +35,4 @@ data:
       enabled: true
       size: 2Gi
       storageClass: shared-ssd
-      accessMode: ReadWriteOnce
 
