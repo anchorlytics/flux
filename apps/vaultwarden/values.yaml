@@ -11,8 +11,7 @@ data:
       passwordHintsAllowed: false
       enableSends: false
       emailChangeAllowed: false
-      emergency:
-        enabled: false
+      orgCreationUsers: none
       admin:
         enabled: true
         existingSecret: vaultwarden-pw
@@ -31,6 +30,7 @@ data:
         - pw.home.seanho.com
       annotations:
         cert-manager.io/cluster-issuer: le-prod
+        nginx.ingress.kubernetes.io/proxy-body-size: 20m
     persistence:
       enabled: true
       size: 2Gi
