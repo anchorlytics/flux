@@ -1,3 +1,4 @@
+# new users: enable as recipient in mailgun
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -9,7 +10,6 @@ data:
       domain: "https://pw.home.seanho.com"
       allowSignups: false
       passwordHintsAllowed: false
-      enableSends: false
       emailChangeAllowed: false
       orgCreationUsers: none
       admin:
