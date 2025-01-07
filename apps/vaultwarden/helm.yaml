@@ -1,3 +1,4 @@
+# https://github.com/gissilabs/charts/tree/master/vaultwarden
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
