@@ -1,0 +1,19 @@
+# https://github.com/nzbgetcom/nzbget/releases
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: nzbget
+resources:
+- deployment.yaml
+- service.yaml
+- ingress.yaml
+- pvc-downloads.yaml
+- pvc-media.yaml
+- secret.yaml
+configMapGenerator:
+- name: config
+  files:
+  - nzbget.conf
+images:
+- name: nzbget
+  newTag: v24.5
