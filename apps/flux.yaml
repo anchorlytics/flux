@@ -15,5 +15,5 @@ spec:
       name: flux-sops
   interval: 1h
   prune: true
-#  dependsOn:
-#  - name: infra-configs
+  dependsOn:
+  - name: infra-configs

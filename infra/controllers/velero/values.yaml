@@ -1,0 +1,30 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: helm-values
+data:
+  values.yaml: |
+    configuration:
+      features: EnableCSI
+      backupStorageLocation:
+      - name: default
+        provider:
+        bucket:
+        default: true
+        credential:
+          name:
+          key:
+        config:
+      volumeSnapshotLocation:
+      - name: default
+        provider:
+        credential:
+          name:
+          key:
+        config:
+    schedules:
+      daily:
+        schedule: "32 3 * * *"
+        template:
+          ttl: 14d
