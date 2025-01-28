@@ -1,0 +1,16 @@
+# https://github.com/kopia/kopia/releases
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: kopia
+resources:
+- deployment.yaml
+- service.yaml
+- ingress.yaml
+- pvc-repository.yaml
+- secret.yaml
+- configmap.yaml
+- configmap-rclone.yaml
+images:
+- name: kopia
+  newTag: 0.18.2

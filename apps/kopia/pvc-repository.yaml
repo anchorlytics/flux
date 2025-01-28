@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: kopia-repository
+  labels:
+    app.kubernetes.io/instance: kopia
+    app.kubernetes.io/name: kopia
+spec:
+  storageClassName: shared-hdd
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Ti

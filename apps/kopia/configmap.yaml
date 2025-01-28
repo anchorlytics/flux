@@ -1,0 +1,10 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kopia-config
+  labels:
+    app.kubernetes.io/instance: kopia
+    app.kubernetes.io/name: kopia
+data:
+  "repository.config": |
