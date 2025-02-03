@@ -13,7 +13,7 @@ data:
       - ReadWriteMany
     gitea:
       admin:
-        existingSecret: gitea-admin
+        existingSecret: forgejo-admin
       config:
         APP_NAME: "Anchorlytics Code"
         server:
@@ -34,7 +34,7 @@ data:
         - path: /
           pathType: Prefix
       tls:
-      - secretName: gitea-tls
+      - secretName: forgejo-tls
         hosts:
         - code.home.seanho.com
       annotations:

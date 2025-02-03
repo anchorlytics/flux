@@ -2,7 +2,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: gitea
+  name: forgejo
 spec:
   interval: 10m
   chartRef:
