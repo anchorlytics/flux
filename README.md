@@ -19,12 +19,12 @@ Single cluster, installing storage first, then infrastructure, then apps.
     + `helm.yaml`: loads **helm** chart, referencing ConfigMap for values
     + `values.yaml`: **ConfigMap** for helm values
     + `secret.yaml`: encrypted **secrets** (if needed)
-  + infra/controllers/: define CRDs for infrastructure used by all clusters
-    + flux.yaml: use repo source, decrypt, point to kustomization.yaml
-    + kustomization.yaml: load resources
-  + infra/configs/: same for resources using above CRDs
-  + storage/controllers/: same for storage system (e.g., rook-ceph)
-  + storage/configs/: same for resources using above CRDs
++ infra/controllers/: define CRDs for infrastructure used by all clusters
+  + flux.yaml: use repo source, decrypt, point to kustomization.yaml
+  + kustomization.yaml: load resources
++ infra/configs/: same for resources using above CRDs
++ storage/controllers/: same for storage system (e.g., rook-ceph)
++ storage/configs/: same for resources using above CRDs
 
 ## Encryption
 + For flux Kustomize controller:

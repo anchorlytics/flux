@@ -1,0 +1,14 @@
+# https://codeberg.org/forgejo/-/packages/container/forgejo/versions
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: forgejo
+resources:
+- ns.yaml
+- src.yaml
+- helm.yaml
+- values.yaml
+- secret.yaml
+images:
+- name: forgejo
+  newTag: 10.0.0
