@@ -9,6 +9,7 @@ data:
   values.yaml: |
     nzbget:
       config:
+        MainDir: /downloads
         DestDir: /media
         InterDir: /cache/inter
         TempDir: /cache/tmp
@@ -16,7 +17,7 @@ data:
         QueueDir: "${MainDir}/queue"
         ScriptDir: "${MainDir}/scripts"
         WebDir: "${AppDir}/webui"
-        ConfigTemplate: "${WebDir}/nzbget.conf.template"
+        ConfigTemplate: "${AppDir}/webui/nzbget.conf.template"
         CertStore: "${AppDir}/cacert.pem"
         CertCheck: yes
         WriteLog: none
