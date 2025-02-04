@@ -1,0 +1,66 @@
+# https://github.com/nzbgetcom/nzbget/blob/develop/nzbget.conf
+# https://trash-guides.info/Downloaders/NZBGet/Basic-Setup/
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: helm-values
+data:
+  values.yaml: |
+    nzbget:
+      config:
+        DestDir: /media
+        InterDir: /cache/inter
+        TempDir: /cache/tmp
+        NzbDir: "${MainDir}/nzb"
+        QueueDir: "${MainDir}/queue"
+        ScriptDir: "${MainDir}/scripts"
+        WebDir: "${AppDir}/webui"
+        ConfigTemplate: "${WebDir}/nzbget.conf.template"
+        CertStore: "${AppDir}/cacert.pem"
+        CertCheck: yes
+
+        Category1.Name: movies
+        Category2.Name: tv
+        Category3.Name: music
+
+        NzbDirInterval: 300
+        FlushQueue: no
+        ContinuePartial: no
+        ArticleCache: 500
+        WriteBuffer: 1024
+        PostStrategy: aggressive
+        NzbCleanupDisk: no
+
+        ArticleRetries: 6
+        ArticleInterval: 30
+        UrlRetries: 6
+        UrlInterval: 30
+
+        ParBuffer: 500
+        DirectRename: yes
+        DirectUnpack: yes
+        UnrarCmd: unrar7
+
+    volumes:
+    - name: main
+      persistentVolumeClaim:
+        claimName: nzbget
+    - name: cache
+      emptyDir:
+        sizeLimit: 20Gi
+        medium: Memory
+    - name: media
+      persistentVolumeClaim:
+        claimName: media
+    volumeMounts:
+    - name: cache
+      mountPath: /cache
+    - name: media
+      mountPath: /media
+    ingress:
+      enabled: true
+      host: nzb.home.seanho.com
+      annotations:
+        cert-manager.io/cluster-issuer: le-prod
+        nginx.ingress.kubernetes.io/proxy-body-size: 1m

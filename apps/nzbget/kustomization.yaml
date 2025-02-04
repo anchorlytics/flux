@@ -1,0 +1,15 @@
+# https://github.com/nzbgetcom/nzbget/releases
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: media
+resources:
+- src.yaml
+- helm.yaml
+- values.yaml
+- pvc-nzbget.yaml
+- pvc-media.yaml
+- secret.yaml
+images:
+- name: nzbget
+  newTag: v24.5
