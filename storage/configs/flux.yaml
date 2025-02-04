@@ -13,6 +13,7 @@ spec:
     provider: sops
     secretRef:
       name: flux-sops
+  interval: 1h
   prune: true
   wait: true
   dependsOn:
