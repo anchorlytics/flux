@@ -5,6 +5,7 @@ kind: Kustomization
 namespace: media
 resources:
 - src.yaml
+- webhook-token.yaml
 - receiver.yaml
 - helm.yaml
 - values.yaml
