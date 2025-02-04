@@ -5,6 +5,7 @@ kind: Kustomization
 namespace: media
 resources:
 - src.yaml
+- receiver.yaml
 - helm.yaml
 - values.yaml
 - pvc-nzbget.yaml
