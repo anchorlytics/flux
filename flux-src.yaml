@@ -8,3 +8,4 @@ spec:
   url: https://github.com/anchorlytics/flux
   ref:
     branch: main
+  interval: 1h
