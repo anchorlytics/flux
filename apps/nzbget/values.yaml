@@ -15,11 +15,11 @@ data:
         NzbDir: "${MainDir}/nzb"
         QueueDir: "${MainDir}/queue"
         ScriptDir: "${MainDir}/scripts"
-        LogFile: "${TempDir}/nzbget.log"
         WebDir: "${AppDir}/webui"
         ConfigTemplate: "${WebDir}/nzbget.conf.template"
         CertStore: "${AppDir}/cacert.pem"
         CertCheck: yes
+        WriteLog: none
 
         Category1.Name: movies
         Category2.Name: tv
