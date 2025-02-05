@@ -12,7 +12,7 @@ resources:
 - secret.yaml
 - helm.yaml
 - pvc-nzbget.yaml
-- pvc-media.yaml
+- pvc-usenet.yaml
 images:
 - name: nzbget
   newTag: v24.5
