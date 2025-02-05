@@ -1,0 +1,13 @@
+# https://github.com/linuxserver/docker-radarr/releases
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: media
+resources:
+- values.yaml
+- helm.yaml
+- pvc-movies.yaml
+- pvc-radarr.yaml
+images:
+- name: radarr
+  newTag: 5.18.4
