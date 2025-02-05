@@ -5,15 +5,15 @@ kind: HelmRelease
 metadata:
   name: nzbget
 spec:
-  interval: 10m
+  interval: 1h
   chart:
     spec:
-      interval: 10m
+      interval: 1h
       sourceRef:
         kind: HelmRepository
         name: anchorlytics
       chart: nzbget
-      version: "0.2.5"
+      version: "0.2.6"
   valuesFrom:
   - kind: ConfigMap
     name: helm-values

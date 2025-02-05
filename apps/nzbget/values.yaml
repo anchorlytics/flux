@@ -8,21 +8,21 @@ metadata:
 data:
   values.yaml: |
     volumes:
-    - name: main
+    - name: appdata
       persistentVolumeClaim:
         claimName: nzbget
     - name: cache
       emptyDir:
         sizeLimit: 20Gi
         medium: Memory
-    - name: media
+    - name: usenset
       persistentVolumeClaim:
-        claimName: media
+        claimName: usenet
     volumeMounts:
     - name: cache
       mountPath: /cache
-    - name: media
-      mountPath: /media
+    - name: usenet
+      mountPath: /usenet
     ingress:
       enabled: true
       host: nzb.home.seanho.com

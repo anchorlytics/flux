@@ -1,0 +1,17 @@
+# shared with radarr/sonarr
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: usenet
+  labels:
+    app.kubernetes.io/instance: nzbget
+    app.kubernetes.io/name: nzbget
+spec:
+  accessModes:
+  - ReadWriteMany
+  resources:
+    requests:
+      storage: 100G
+  storageClassName: shared-ssd
+
