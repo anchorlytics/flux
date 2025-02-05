@@ -16,4 +16,4 @@ spec:
       version: "0.1.0"
   valuesFrom:
   - kind: ConfigMap
-    name: helm-values
+    name: radarr-values
