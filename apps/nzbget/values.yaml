@@ -15,7 +15,7 @@ data:
       emptyDir:
         sizeLimit: 20Gi
         medium: Memory
-    - name: usenset
+    - name: usenet
       persistentVolumeClaim:
         claimName: usenet
     volumeMounts:
