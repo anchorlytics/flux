@@ -16,7 +16,7 @@ spec:
       version: "0.2.7"
   valuesFrom:
   - kind: ConfigMap
-    name: helm-values
+    name: nzbget-values
   - kind: ConfigMap
     name: nzbget-conf
   - kind: Secret
