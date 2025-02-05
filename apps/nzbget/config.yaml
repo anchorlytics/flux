@@ -1,0 +1,43 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nzbget-conf
+data:
+  values.yaml: |
+    nzbget:
+      config:
+        DestDir: /media
+        InterDir: /cache/inter
+        TempDir: /cache/tmp
+        NzbDir: "${MainDir}/nzb"
+        QueueDir: "${MainDir}/queue"
+        ScriptDir: "${MainDir}/scripts"
+        WebDir: "${AppDir}/webui"
+        ConfigTemplate: "${AppDir}/webui/nzbget.conf.template"
+        CertStore: "${AppDir}/cacert.pem"
+        CertCheck: yes
+
+        Category1.Name: movies
+        Category2.Name: tv
+        Category3.Name: music
+
+        NzbDirInterval: 300
+        FlushQueue: no
+        ContinuePartial: no
+        ArticleCache: 500
+        WriteBuffer: 1024
+        PostStrategy: aggressive
+        NzbCleanupDisk: no
+
+        ArticleRetries: 6
+        ArticleInterval: 30
+        UrlRetries: 6
+        UrlInterval: 30
+
+        ParBuffer: 500
+        DirectRename: yes
+        DirectUnpack: yes
+        UnrarCmd: unrar7
+
+

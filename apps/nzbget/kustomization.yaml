@@ -7,11 +7,12 @@ resources:
 - src.yaml
 - webhook-token.yaml
 - receiver.yaml
-- helm.yaml
 - values.yaml
+- config.yaml
+- secret.yaml
+- helm.yaml
 - pvc-nzbget.yaml
 - pvc-media.yaml
-- secret.yaml
 images:
 - name: nzbget
   newTag: v24.5
