@@ -13,7 +13,7 @@ spec:
         kind: HelmRepository
         name: anchorlytics
       chart: nzbget
-      version: "0.2.4"
+      version: "0.2.5"
   valuesFrom:
   - kind: ConfigMap
     name: helm-values
