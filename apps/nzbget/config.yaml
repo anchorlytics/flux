@@ -26,6 +26,7 @@ data:
         FlushQueue: no
         ContinuePartial: no
         ArticleCache: 500
+        DirectWrite: no
         WriteBuffer: 1024
         PostStrategy: aggressive
         NzbCleanupDisk: no
