@@ -32,8 +32,9 @@ data:
         NzbCleanupDisk: "no"
         KeepHistory: 14
 
+        ArticleTimeout: 60
         ArticleRetries: 6
-        ArticleInterval: 30
+        ArticleInterval: 60
         UrlRetries: 6
         UrlInterval: 30
 
