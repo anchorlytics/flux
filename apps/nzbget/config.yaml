@@ -8,8 +8,8 @@ data:
     nzbget:
       config:
         DestDir: /usenet
-        InterDir: /cache/inter
-        TempDir: /cache/tmp
+        InterDir: /usenet/incomplete
+        TempDir: /dev/shm
         NzbDir: "${MainDir}/nzb"
         QueueDir: "${MainDir}/queue"
         ScriptDir: "${MainDir}/scripts"

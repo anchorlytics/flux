@@ -11,15 +11,10 @@ data:
     - name: appdata
       persistentVolumeClaim:
         claimName: nzbget
-    - name: cache
-      persistentVolumeClaim:
-        claimName: nzbget-cache
     - name: usenet
       persistentVolumeClaim:
         claimName: usenet
     volumeMounts:
-    - name: cache
-      mountPath: /cache
     - name: usenet
       mountPath: /usenet
     ingress:
