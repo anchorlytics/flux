@@ -43,4 +43,6 @@ data:
         DirectUnpack: "yes"
         UnrarCmd: unrar7
 
+        DetailTarget: Screen
+        DebugTarget: Screen
 
