@@ -12,6 +12,7 @@ resources:
 - secret.yaml
 - helm.yaml
 - pvc-nzbget.yaml
+- pvc-cache.yaml
 - pvc-usenet.yaml
 images:
 - name: nzbget

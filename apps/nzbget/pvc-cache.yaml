@@ -1,17 +1,17 @@
-# shared with radarr/sonarr
+# InterDir: in-progress and unpacks
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: usenet
+  name: nzbget-cache
   labels:
     app.kubernetes.io/instance: nzbget
     app.kubernetes.io/name: nzbget
 spec:
   accessModes:
-  - ReadWriteMany
+  - ReadWriteOnce
   resources:
     requests:
-      storage: 500G
-  storageClassName: shared-ssd
+      storage: 2T
+  storageClassName: shared-hdd
 
