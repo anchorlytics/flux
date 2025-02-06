@@ -29,6 +29,7 @@ data:
         WriteBuffer: 1024
         PostStrategy: aggressive
         NzbCleanupDisk: no
+        KeepHistory: 14
 
         ArticleRetries: 6
         ArticleInterval: 30
