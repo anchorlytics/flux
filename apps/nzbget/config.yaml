@@ -22,6 +22,7 @@ data:
         Category2.Name: tv
         Category3.Name: music
 
+        FormAuth: "yes"
         NzbDirInterval: 300
         FlushQueue: "no"
         ContinuePartial: no
