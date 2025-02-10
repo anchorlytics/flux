@@ -1,0 +1,12 @@
+ # https://github.com/jellyfin/jellyfin
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: media
+resources:
+- src.yaml
+- helm.yaml
+- values.yaml
+images:
+- name: jellyfin
+  newTag: 10.10.5

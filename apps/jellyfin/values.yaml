@@ -1,0 +1,37 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: jellyfin-values
+data:
+  values.yaml: |
+    ingress:
+      enabled: true
+      hosts:
+      - host: media.home.seanho.com
+        paths:
+        - path: /
+          pathType: Prefix
+      tls:
+      - secretName: jellyfin-tls
+        hosts:
+        - media.home.seanho.com
+      annotations:
+        cert-manager.io/cluster-issuer: le-prod
+        nginx.ingress.kubernetes.io/proxy-body-size: 20m
+    persistence:
+      config:
+        storageClass: pods
+      media:
+        enabled: false
+    volumes:
+    - name: movies
+      persistentVolumeClaim:
+        claimName: movies
+    volumeMounts:
+    - name: movies
+      mountPath: /movies
+    metrics:
+      enabled: true
+      serviceMonitor:
+        enabled: true
