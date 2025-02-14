@@ -20,18 +20,18 @@ data:
 
         Category1.Name: movies
         Category2.Name: tv
-        Category3.Name: music
 
         FormAuth: "yes"
         NzbDirInterval: 300
         FlushQueue: "no"
-        ContinuePartial: no
+        ContinuePartial: "no"
         ArticleCache: 500
         DirectWrite: "no"
         WriteBuffer: 1024
         PostStrategy: aggressive
         NzbCleanupDisk: "no"
         KeepHistory: 14
+        PropagationDelay: 120
 
         ArticleTimeout: 60
         ArticleRetries: 6
