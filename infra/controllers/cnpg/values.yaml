@@ -1,0 +1,11 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: helm-values
+data:
+  values.yaml: |
+    monitoring:
+      podMonitorEnabled: true
+      grafanaDashboard:
+        create: true
