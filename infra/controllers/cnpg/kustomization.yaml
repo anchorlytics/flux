@@ -8,6 +8,7 @@ resources:
 - src.yaml
 - helm.yaml
 - values.yaml
+- https://github.com/cloudnative-pg/postgres-containers/raw/refs/heads/main/Debian/ClusterImageCatalog-bookworm.yaml
 images:
 - name: cloudnative-pg
   newTag: 1.25.0
