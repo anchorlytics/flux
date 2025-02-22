@@ -5,7 +5,7 @@ kind: HelmRelease
 metadata:
   name: cnpg
 spec:
-  interval: 10m
+  interval: 20m
   chart:
     spec:
       interval: 2h
