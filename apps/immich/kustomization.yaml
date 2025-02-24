@@ -1,0 +1,13 @@
+# https://github.com/immich-app/immich
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: nextcloud
+resources:
+- src.yaml
+- helm.yaml
+- values.yaml
+- secret.yaml
+images:
+- name: immich
+  newTag: v1.126.1
