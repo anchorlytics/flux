@@ -8,6 +8,7 @@ resources:
 - helm.yaml
 - values.yaml
 - secret.yaml
+- db.yaml
 images:
 - name: immich
   newTag: v1.126.1

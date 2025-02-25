@@ -6,3 +6,4 @@ resources:
 - nzbget/
 - radarr/
 - forgejo/
+- immich
