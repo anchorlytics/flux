@@ -5,6 +5,13 @@ metadata:
   name: helm-values
 data:
   values.yaml: |
+    env:
+      DB_HOSTNAME: immich-db-rw
+    postgresql:
+      global:
+        postgresql:
+          auth:
+            existingSecret: immich-db-app
     server:
       ingress:
         main:
@@ -14,7 +21,7 @@ data:
             paths:
             - path: /
           tls:
-          - secretName: vaultwarden-tls
+          - secretName: immich-tls
             hosts:
             - photos.home.seanho.com
           annotations:
