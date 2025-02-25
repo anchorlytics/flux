@@ -7,7 +7,6 @@ resources:
 - src.yaml
 - helm.yaml
 - values.yaml
-- secret.yaml
 - db.yaml
 images:
 - name: immich
