@@ -13,6 +13,8 @@ data:
       - ReadWriteMany
     postgresql:
       enabled: false
+    postgresql-ha:
+      enabled: false
     gitea:
       admin:
         existingSecret: forgejo-admin
