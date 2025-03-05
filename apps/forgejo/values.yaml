@@ -19,12 +19,20 @@ data:
         existingSecret: forgejo-admin
       config:
         APP_NAME: "Anchorlytics Code"
+        repository:
+          ROOT: repos
+          ENABLE_PUSH_CREATE_USER: true
         server:
           PPROF_ENABLED: true
+          DISABLE_SSH: true
         "cron.GIT_GC_REPOS": 
           ENABLED: false
         actions:
           ENABLED: true
+        database:
+          DB_TYPE: postgres
+          HOST: forgejo-db-rw:5432
+          NAME: forgejo
       metrics:
         enabled: true
         serviceMonitor:
