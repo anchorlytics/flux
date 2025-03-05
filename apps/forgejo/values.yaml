@@ -24,12 +24,6 @@ data:
           ENABLED: false
         actions:
           ENABLED: true
-        database:
-          DB_TYPE: postgres
-          HOST: forgejo-db:5432
-          NAME: forgejo
-          USER: forgejo
-          PASSWD: 
       metrics:
         enabled: true
         serviceMonitor:
