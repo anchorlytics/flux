@@ -15,7 +15,7 @@ spec:
   bootstrap:
     initdb:
       database: forgejo
-      owner: forgejo
+      owner: gitea
       secret:
         name: forgejo-db-pw
 
