@@ -22,6 +22,8 @@ data:
         repository:
           ROOT: repos
           ENABLE_PUSH_CREATE_USER: true
+        security:
+          INSTALL_LOCK: true
         server:
           PPROF_ENABLED: true
           DISABLE_SSH: true
