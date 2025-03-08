@@ -10,4 +10,4 @@ resources:
 - pvc-radarr.yaml
 images:
 - name: radarr
-  newTag: 5.18.4
+  newTag: 5.19.3
