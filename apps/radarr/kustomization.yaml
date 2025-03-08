@@ -9,5 +9,5 @@ resources:
 - pvc-movies.yaml
 - pvc-radarr.yaml
 images:
-- name: radarr
+- name: linuxserver/radarr
   newTag: 5.19.3
