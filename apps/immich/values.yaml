@@ -1,3 +1,4 @@
+# https://github.com/immich-app/immich-charts/blob/main/charts/immich/values.yaml
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -5,6 +6,8 @@ metadata:
   name: helm-values
 data:
   values.yaml: |
+    image:
+      tag: v1.126.1 # https://github.com/immich-app/immich
     env:
       DB_HOSTNAME: immich-db-rw
     postgresql:
