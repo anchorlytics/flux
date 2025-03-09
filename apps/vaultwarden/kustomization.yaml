@@ -1,4 +1,3 @@
- # https://hub.docker.com/r/vaultwarden/server
 ---
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
@@ -8,6 +7,3 @@ resources:
 - helm.yaml
 - values.yaml
 - secret.yaml
-images:
-- name: vaultwarden 
-  newTag: 1.32.7

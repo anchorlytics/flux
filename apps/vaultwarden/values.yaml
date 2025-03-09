@@ -1,3 +1,4 @@
+# https://github.com/gissilabs/charts/blob/master/vaultwarden/values.yaml
 # new users: enable as recipient in mailgun
 ---
 apiVersion: v1
@@ -6,6 +7,8 @@ metadata:
   name: helm-values
 data:
   values.yaml: |
+    image:
+      tag: 1.33.2 # https://github.com/dani-garcia/vaultwarden/releases
     vaultwarden:
       domain: "https://pw.home.seanho.com"
       allowSignups: false
