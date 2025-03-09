@@ -1,0 +1,13 @@
+# shared with jellyfin
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: tv
+spec:
+  accessModes:
+  - ReadWriteMany
+  resources:
+    requests:
+      storage: 8T
+  storageClassName: shared-hdd

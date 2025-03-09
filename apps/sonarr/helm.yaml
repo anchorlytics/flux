@@ -1,0 +1,19 @@
+# https://github.com/anchorlytics/charts/tree/main/sonarr
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: sonarr
+spec:
+  interval: 1h
+  chart:
+    spec:
+      interval: 1h
+      sourceRef:
+        kind: HelmRepository
+        name: anchorlytics
+      chart: sonarr
+      version: "0.1.*"
+  valuesFrom:
+  - kind: ConfigMap
+    name: sonarr-values
