@@ -1,3 +1,5 @@
+# https://github.com/nzbgetcom/nzbget/blob/develop/nzbget.conf
+# https://trash-guides.info/Downloaders/NZBGet/Basic-Setup/
 ---
 apiVersion: v1
 kind: ConfigMap

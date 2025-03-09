@@ -1,5 +1,4 @@
-# https://github.com/nzbgetcom/nzbget/blob/develop/nzbget.conf
-# https://trash-guides.info/Downloaders/NZBGet/Basic-Setup/
+# https://github.com/anchorlytics/charts/blob/main/nzbget/values.yaml
 ---
 apiVersion: v1
 kind: ConfigMap
