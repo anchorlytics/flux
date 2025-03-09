@@ -5,6 +5,8 @@ metadata:
   name: helm-values
 data:
   values.yaml: |
+    image:
+      tag: 10.0.1 # https://codeberg.org/forgejo/-/packages/container/forgejo/versions
     replicaCount: 2
     persistence:
       claimName: forgejo-data
