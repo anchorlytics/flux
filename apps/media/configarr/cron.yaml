@@ -1,0 +1,42 @@
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: configarr
+spec:
+  schedule: "17 1 * * 3" # weekly
+  successfulJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 1
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: configarr
+              # https://github.com/raydak-labs/configarr/releases
+              image: ghcr.io/raydak-labs/configarr:1.13.0
+              imagePullPolicy: Always
+              tty: true # for color support
+#              envFrom:
+#                - configMapRef:
+#                    name: common-deployment-environment
+              volumeMounts:
+                - name: appdata
+                  mountPath: /app/repos # Cache repositories
+                - name: config
+                  subPath: config.yml
+                  mountPath: /app/config/config.yml
+                - name: secrets
+                  subPath: secrets.yml
+                  mountPath: /app/config/secrets.yml
+          volumes:
+            - name: appdata
+              persistentVolumeClaim:
+                claimName: configarr
+            - name: config
+              configMap:
+                name: configarr
+            - name: secrets
+              secret:
+                secretName: configarr
+          restartPolicy: Never
