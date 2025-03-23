@@ -1,0 +1,19 @@
+apiVersion: ceph.rook.io/v1
+kind: CephObjectStore
+metadata:
+  name: loki
+  namespace: rook-ceph
+spec:
+  metadataPool:
+    failureDomain: host
+    replicated:
+      size: 3
+    deviceClass: ssd
+  dataPool:
+    failureDomain: host
+    replicated:
+      size: 3
+    deviceClass: hdd
+  gateway:
+    port: 80
+    instances: 2

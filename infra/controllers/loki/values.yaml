@@ -1,0 +1,68 @@
+# https://github.com/grafana/loki/tree/main/production/helm/loki
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: helm-values
+data:
+  values.yaml: |
+    image:
+      tag: v3.4.2 # https://github.com/grafana/loki/releases
+    ingress:
+      enabled: true
+      hosts:
+      - loki.home.seanho.com
+      tls:
+      - secretName: loki-tls
+        hosts:
+        - loki.home.seanho.com
+      annotations:
+        cert-manager.io/cluster-issuer: le-prod
+    write:
+      extraArgs:
+      - "-config.expand-env=true"
+      extraEnvFrom:
+      - configMapRef:
+          name: loki-data
+      - secretRef:
+          name: loki-data
+    read:
+      extraArgs:
+      - "-config.expand-env=true"
+      extraEnvFrom:
+      - configMapRef:
+          name: loki-data
+      - secretRef:
+          name: loki-data
+    backend:
+      extraArgs:
+      - "-config.expand-env=true"
+      extraEnvFrom:
+      - configMapRef:
+          name: loki-data
+      - secretRef:
+          name: loki-data
+    gateway:
+      extraArgs:
+      - "-config.expand-env=true"
+      extraEnvFrom:
+      - configMapRef:
+          name: loki-data
+      - secretRef:
+          name: loki-data
+    loki:
+      analytics:
+        reporting_enabled: false
+      storage:
+        bucketNames:
+          chunks: ${BUCKET_NAME}
+          ruler: ${BUCKET_NAME}
+        s3:
+          endpoint: ${BUCKET_HOST}
+          accessKeyId: ${AWS_ACCESS_KEY_ID}
+          secretAccessKey: ${AWS_SECRET_ACCESS_KEY}
+          s3ForcePathStyle: true
+          insecure: true
+    monitoring:
+      dashboards:
+        namespace: grafana
