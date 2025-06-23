@@ -5,3 +5,4 @@ resources:
 - cron.yaml
 - config.yaml
 - secret.yaml
+- pvc.yaml
