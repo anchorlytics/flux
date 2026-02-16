@@ -11,7 +11,7 @@ data:
       config:
         DestDir: /usenet
         InterDir: /usenet/incomplete
-        TempDir: /dev/shm
+        TempDir: /downloads/temp
         NzbDir: "${MainDir}/nzb"
         QueueDir: "${MainDir}/queue"
         ScriptDir: "${MainDir}/scripts"
