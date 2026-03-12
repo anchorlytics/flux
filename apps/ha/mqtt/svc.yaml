@@ -5,6 +5,8 @@ metadata:
   name: mqtt
   labels:
     app: mosquitto
+  annotations:
+    metallb.universe.tf/loadBalancerIPs: 10.90.4.100
 spec:
   ports:
     - port: 1883
