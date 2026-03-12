@@ -47,3 +47,5 @@ spec:
       - name: config
         configMap:
           name: mosquitto-config
+      securityContext:
+        fsGroup: 1883
