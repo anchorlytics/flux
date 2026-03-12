@@ -29,21 +29,21 @@ spec:
         - containerPort: 1883
           name: mosquitto
         volumeMounts:
-        - name: mosquitto-persistent-storage
+        - name: data
           mountPath: /mosquitto/data
-        - name: mosquitto-password
+        - name: password
           subPath: password.txt
           mountPath: /mosquitto/config/password.txt
-        - name: mosquitto-config
+        - name: config
           subPath: mosquitto.conf
           mountPath: /mosquitto/config/mosquitto.conf
       volumes:
-      - name: mosquitto-persistent-storage
+      - name: data
         persistentVolumeClaim:
-          claimName: pvc-mosquitto
-      - name: mosquitto-password
+          claimName: mosquitto-data
+      - name: password
         secret:
           secretName: mosquitto-password
-      - name: mosquitto-config
+      - name: config
         configMap:
           name: mosquitto-config
