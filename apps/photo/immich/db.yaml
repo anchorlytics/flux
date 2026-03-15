@@ -12,10 +12,6 @@ spec:
     name: postgresql
     major: 18
 
-  postgresql:
-    shared_preload_libraries:
-      - "vectors.so"
-
   managed:
     roles:
       - name: immich
