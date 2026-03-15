@@ -10,7 +10,7 @@ spec:
     apiGroup: postgresql.cnpg.io
     kind: ClusterImageCatalog
     name: postgresql
-    major: 17
+    major: 18
 
   postgresql:
     shared_preload_libraries:

@@ -13,7 +13,7 @@ spec:
         kind: HelmRepository
         name: immich
       chart: immich
-      version: "0.9.0"
+      version: "0.10.3"
   valuesFrom:
   - kind: ConfigMap
     name: helm-values
