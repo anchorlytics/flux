@@ -6,5 +6,6 @@ resources:
 - helm.yaml
 - values.yaml
 - db.yaml
+- db-cluster.yaml
 - pvc-photos.yaml
 - pvc-cache.yaml
