@@ -19,6 +19,11 @@ spec:
         superuser: true
         login: true
 
+  bootstrap:
+    initdb:
+      database: immich
+      owner: immich
+
   storage:
     size: 8Gi
     storageClass: local-path

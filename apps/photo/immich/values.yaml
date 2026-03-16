@@ -26,6 +26,8 @@ data:
                 secretKeyRef:
                   name: immich-db-app
                   key: password
+            - name: REDIS_HOSTNAME
+              value: immich-valkey
     immich:
       metrics:
         enabled: true
