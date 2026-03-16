@@ -39,7 +39,7 @@ data:
         main:
           enabled: true
           hosts:
-          - host: photos.home.seanho.com
+          - host: photo.home.seanho.com
             paths:
             - path: /
           tls:
