@@ -7,3 +7,4 @@ resources:
 - values.yaml
 - db.yaml
 - pvc-photos.yaml
+- pvc-cache.yaml

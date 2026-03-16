@@ -1,4 +1,5 @@
 # https://github.com/immich-app/immich-charts/blob/main/charts/immich/values.yaml
+# https://github.com/immich-app/immich
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -6,15 +7,31 @@ metadata:
   name: helm-values
 data:
   values.yaml: |
-    image:
-      tag: v2.5.6 # https://github.com/immich-app/immich
-    env:
-      DB_HOSTNAME: immich-db-rw
-    postgresql:
-      global:
-        postgresql:
-          auth:
-            existingSecret: immich-db-app
+    controllers:
+      main:
+        containers:
+          main:
+            image:
+              tag: v2.5.6
+            env:
+            - name: DB_HOSTNAME
+              value: immich-db-rw
+            - name: DB_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: immich-db-app
+                  key: username
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: immich-db-app
+                  key: password
+    immich:
+      metrics:
+        enabled: true
+      persistence:
+        library:
+          existingClaim: photos
     server:
       ingress:
         main:
@@ -26,15 +43,14 @@ data:
           tls:
           - secretName: immich-tls
             hosts:
-            - photos.home.seanho.com
+            - photo.home.seanho.com
           annotations:
             cert-manager.io/cluster-issuer: le-prod
             nginx.ingress.kubernetes.io/proxy-body-size: 4g
-    immich:
-      metrics:
-        enabled: true
+    machine-learning:
       persistence:
-        library:
-          existingClaim: photos
-    redis:
+        cache:
+          type: persistentVolumeClaim
+          existingClaim: cache
+    valkey:
       enabled: true
