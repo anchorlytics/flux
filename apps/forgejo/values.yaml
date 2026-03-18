@@ -1,3 +1,4 @@
+# https://codeberg.org/forgejo/-/packages/container/forgejo/versions
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -6,7 +7,7 @@ metadata:
 data:
   values.yaml: |
     image:
-      tag: 10.0.1 # https://codeberg.org/forgejo/-/packages/container/forgejo/versions
+      tag: 14.0.3
     replicaCount: 2
     persistence:
       claimName: forgejo-data
