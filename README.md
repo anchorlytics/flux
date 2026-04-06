@@ -3,7 +3,8 @@ Kubernetes cluster state managed by flux.
 Single cluster, installing storage first, then infrastructure, then apps.
 
 ## Quick Start
-`kubectl apply -k .`
+`kubectl apply -f https://github.com/controlplaneio-fluxcd/flux-operator/releases/latest/download/install.yaml`
+`kubectl apply -f .`
 
 ## Directory Structure
 + `kustomize.yaml`: points to all **flux** Kustomizations
