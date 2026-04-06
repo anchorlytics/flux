@@ -1,0 +1,19 @@
+# https://github.com/jellyfin/jellyfin-helm/tree/master/charts/jellyfin
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: jellyfin
+spec:
+  interval: 10m
+  chart:
+    spec:
+      interval: 2h
+      sourceRef:
+        kind: HelmRepository
+        name: jellyfin
+      chart: jellyfin
+      version: "3.0.0"
+  valuesFrom:
+  - kind: ConfigMap
+    name: helm-values

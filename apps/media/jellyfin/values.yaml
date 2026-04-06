@@ -1,0 +1,39 @@
+# https://github.com/jellyfin/jellyfin-helm/blob/master/charts/jellyfin/values.yaml
+# https://github.com/jellyfin/jellyfin/pkgs/container/jellyfin
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: helm-values
+data:
+  values.yaml: |
+    image:
+      tag: ""
+    ingress:
+      enabled: true
+      annotations:
+        cert-manager.io/cluster-issuer: le-prod
+      hosts:
+      - host: jellyfin.home.seanho.com
+        paths:
+        - path: /
+          pathType: ImplementationSpecific
+      tls:
+      - secretName: jellyfin-tls
+        hosts:
+        - jellyfin.home.seanho.com
+    volumes:
+    - name: tv
+      persistentVolumeClaim:
+        claimName: tv
+    volumeMounts:
+    - name: tv
+      mountPath: /tv
+    persistence:
+      media:
+        existingClaim: movies
+    metrics:
+      enabled: true
+      serviceMonitor:
+        enabled: true
+
