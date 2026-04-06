@@ -6,4 +6,6 @@ metadata:
 spec:
   interval: 1d
   url: "oci://registry.k8s.io/nfd/charts/node-feature-discovery"
+  ref:
+   semver: "^0.2.1"
 

@@ -6,14 +6,9 @@ metadata:
   name: nfd
 spec:
   interval: 20m
-  chart:
-    spec:
-      interval: 2h
-      sourceRef:
-        kind: OCIRepository
-        name: nfd
-      chart: node-feature-discovery
-      version: "0.2.1"
+  chartRef:
+    kind: HelmChart
+    name: nfd
   valuesFrom:
   - kind: ConfigMap
     name: helm-values
