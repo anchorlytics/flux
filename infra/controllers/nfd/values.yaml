@@ -1,0 +1,18 @@
+# https://kubernetes-sigs.github.io/node-feature-discovery/stable/deployment/helm.html#chart-parameters
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: helm-values
+data:
+  values.yaml: |
+    prometheus:
+      enable: true
+    worker:
+      config:
+        core:
+          sleepInterval: 15m
+        sources:
+          usb:
+            deviceClassWhiteList: ["02", "03"]
+            deviceLabelFields: [vendor, device]
