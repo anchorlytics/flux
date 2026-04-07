@@ -1,0 +1,24 @@
+# https://fluxoperator.dev/docs/charts/flux-operator/
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: helm-values
+data:
+  values.yaml: |
+    web:
+      ingress:
+        enabled: true
+        annotations:
+          cert-manager.io/cluster-issuer: le-prod
+        hosts:
+        - host: flux.home.seanho.com
+          paths:
+          - path: /
+            pathType: ImplementationSpecific
+        tls:
+        - secretName: flux-tls
+          hosts:
+          - flux.home.seanho.com
+      httpRoute:
+        enabled: false

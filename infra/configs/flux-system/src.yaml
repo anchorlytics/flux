@@ -3,7 +3,6 @@ apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
   name: flux
-  namespace: flux-system
 spec:
   url: https://github.com/anchorlytics/flux
   ref:

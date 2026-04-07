@@ -1,0 +1,12 @@
+# https://github.com/controlplaneio-fluxcd/flux-operator/releases
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: OCIRepository
+metadata:
+  name: flux-operator
+spec:
+  interval: 1d
+  url: "oci://ghcr.io/controlplaneio-fluxcd/charts/flux-operator"
+  ref:
+   semver: "^0.45.1"
+

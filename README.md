@@ -7,8 +7,9 @@ Single cluster, installing storage first, then infrastructure, then apps.
   `kubectl apply -f https://github.com/controlplaneio-fluxcd/flux-operator/releases/latest/download/install.yaml`
 + Create FluxInstance:
   `kubectl apply -f infra/controllers/flux-system/flux-instance.yaml`
-+ Specify repo to sync:
-  `kubectl apply -f infra/controllers/flux-system/flux-src.yaml`
++ Configure flux:
+  `kubectl apply -k infra/configs/flux-system/`
++ Once flux is running, flux-operator will be managed by helm chart under `infra/controllers/flux-system/`
 
 ## Directory Structure
 + `kustomize.yaml`: points to all **flux** Kustomizations
