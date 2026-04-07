@@ -18,3 +18,8 @@ spec:
   - kustomize-controller
   - helm-controller
   - notification-controller
+  sync:
+    kind: GitRepository
+    url: "https://github.com/anchorlytics/flux"
+    ref:
+      branch: main
