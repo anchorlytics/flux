@@ -14,3 +14,7 @@ spec:
   commonMetadata:
     labels:
       app.kubernetes.io/name: flux
+  components:
+  - kustomize-controller
+  - helm-controller
+  - notification-controller
