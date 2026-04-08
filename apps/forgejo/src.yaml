@@ -1,6 +1,6 @@
 # https://code.forgejo.org/forgejo-helm/forgejo-helm/releases
 ---
-apiVersion: source.toolkit.fluxcd.io/v1beta2
+apiVersion: source.toolkit.fluxcd.io/v1
 kind: OCIRepository
 metadata:
   name: forgejo
