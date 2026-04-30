@@ -6,6 +6,12 @@ metadata:
   name: nzbget-values
 data:
   values.yaml: |
+    env:
+    - name: PGID
+      value: "100"
+    securityContext:
+      runAsUser: 1000
+      runAsGroup: 100
     volumes:
     - name: appdata
       persistentVolumeClaim:
