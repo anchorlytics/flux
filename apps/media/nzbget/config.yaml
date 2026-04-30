@@ -44,6 +44,7 @@ data:
         ParBuffer: 500
         DirectRename: "yes"
         DirectUnpack: "yes"
+        Unpack: "yes"
         UnrarCmd: unrar7
 
         DetailTarget: Screen
