@@ -1,0 +1,11 @@
+# https://github.com/bitnami/charts/tree/main/bitnami/metallb
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: OCIRepository
+metadata:
+  name: metallb
+spec:
+  interval: 24h
+  url: oci://registry-1.docker.io/bitnamicharts/metallb
+  ref:
+    tag: 6.4.23

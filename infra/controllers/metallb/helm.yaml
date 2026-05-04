@@ -1,0 +1,13 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: metallb
+spec:
+  interval: 10m
+  chartRef:
+    kind: OCIRepository
+    name: metallb
+  valuesFrom:
+  - kind: ConfigMap
+    name: helm-values

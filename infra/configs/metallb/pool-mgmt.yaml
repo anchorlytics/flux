@@ -1,0 +1,10 @@
+---
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: mgmt
+  namespace: metallb-system
+spec:
+  addresses:
+  - 10.90.3.96/27
+
