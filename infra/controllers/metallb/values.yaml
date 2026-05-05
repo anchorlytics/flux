@@ -1,4 +1,4 @@
-# https://github.com/bitnami/charts/blob/master/bitnami/metallb/
+# https://github.com/metallb/metallb/tree/main/charts/metallb
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -6,19 +6,12 @@ metadata:
   name: helm-values
 data:
   values.yaml: |
-    prometheusRule:
-      enabled: true
     controller:
       nodeSelector:
         role: ingress
-      metrics:
-        enabled: true
-        serviceMonitor:
-          enabled: true
     speaker:
       nodeSelector:
         role: ingress
-      metrics:
+    prometheus:
+      prometheusRule:
         enabled: true
-        serviceMonitor:
-          enabled: true
