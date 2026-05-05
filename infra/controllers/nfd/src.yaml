@@ -4,7 +4,7 @@ kind: OCIRepository
 metadata:
   name: nfd
 spec:
-  interval: 1d
+  interval: 24h
   url: "oci://registry.k8s.io/nfd/charts/node-feature-discovery"
   ref:
    semver: "^0.2.1"
