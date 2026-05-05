@@ -1,4 +1,5 @@
 # https://github.com/anchorlytics/charts/blob/main/sonarr/values.yaml
+# https://github.com/linuxserver/docker-sonarr/releases
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -6,6 +7,8 @@ metadata:
   name: sonarr-values
 data:
   values.yaml: |
+    image:
+      tag: 4.0.17
     volumes:
     - name: appdata
       persistentVolumeClaim:

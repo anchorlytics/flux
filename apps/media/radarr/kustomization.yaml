@@ -6,6 +6,3 @@ resources:
 - helm.yaml
 - pvc-movies.yaml
 - pvc-radarr.yaml
-images:
-- name: radarr
-  newTag: 6.1.1

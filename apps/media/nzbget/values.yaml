@@ -1,4 +1,5 @@
 # https://github.com/anchorlytics/charts/blob/main/nzbget/values.yaml
+# https://github.com/nzbgetcom/nzbget/releases
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -6,6 +7,8 @@ metadata:
   name: nzbget-values
 data:
   values.yaml: |
+    image:
+      tag: v26.1
     env:
     - name: PGID
       value: "100"

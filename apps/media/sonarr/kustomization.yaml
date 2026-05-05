@@ -6,6 +6,3 @@ resources:
 - helm.yaml
 - pvc-tv.yaml
 - pvc-sonarr.yaml
-images:
-- name: sonarr
-  newTag: 4.0.17

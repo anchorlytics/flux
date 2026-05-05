@@ -1,4 +1,5 @@
 # https://github.com/anchorlytics/charts/blob/main/radarr/values.yaml
+# https://github.com/linuxserver/docker-radarr/releases
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -6,6 +7,8 @@ metadata:
   name: radarr-values
 data:
   values.yaml: |
+    image:
+      tag: 6.1.1
     volumes:
     - name: appdata
       persistentVolumeClaim:
