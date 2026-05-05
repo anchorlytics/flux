@@ -4,7 +4,6 @@ kind: Kustomization
 namespace: flux-system
 resources:
 - ns.yaml
-- src.yaml
 - helm.yaml
 - values.yaml
 
