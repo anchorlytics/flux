@@ -4,7 +4,6 @@ kind: Kustomization
 namespace: flux-system
 resources:
 - instance.yaml
-- src.yaml
 - ingress-webhook.yaml
 - webhook-token.yaml
 - receiver-flux.yaml
