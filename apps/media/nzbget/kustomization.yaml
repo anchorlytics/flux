@@ -11,3 +11,6 @@ resources:
 - helm.yaml
 - pvc-nzbget.yaml
 - pvc-usenet.yaml
+images:
+- name: nzbget
+  newTag: v26.1
