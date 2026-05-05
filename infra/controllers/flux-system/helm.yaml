@@ -6,7 +6,7 @@ metadata:
 spec:
   interval: 20m
   chartRef:
-    kind: HelmChart
+    kind: OCIRepository
     name: flux-operator
   valuesFrom:
   - kind: ConfigMap
