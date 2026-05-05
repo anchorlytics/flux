@@ -8,7 +8,7 @@ data:
   values.yaml: |
     image:
       tag: 15.0.1
-    replicaCount: 2
+    replicaCount: 1
     persistence:
       claimName: forgejo-data
       size: 20Gi
