@@ -8,7 +8,7 @@ metadata:
 data:
   values.yaml: |
     image:
-      tag: 1.33.2 # https://github.com/dani-garcia/vaultwarden/releases
+      tag: 1.36.0 # https://github.com/dani-garcia/vaultwarden/releases
     vaultwarden:
       domain: "https://pw.home.seanho.com"
       allowSignups: false
