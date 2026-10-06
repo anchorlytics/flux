@@ -5,5 +5,5 @@ metadata:
   name: mgmt
 spec:
   addresses:
-  - 10.90.3.96/27
+  - 10.80.3.96/27
 
