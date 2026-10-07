@@ -13,7 +13,7 @@ spec:
         kind: HelmRepository
         name: vaultwarden
       chart: vaultwarden
-      version: "1.4.0"
+      version: "1.4.2"
   valuesFrom:
   - kind: ConfigMap
     name: helm-values
