@@ -8,7 +8,7 @@ metadata:
 data:
   values.yaml: |
     image:
-      tag: v26.1
+      tag: v26.3
     env:
     - name: PGID
       value: "100"

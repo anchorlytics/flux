@@ -7,7 +7,7 @@ metadata:
 data:
   values.yaml: |
     image:
-      tag: 15.0.1
+      tag: 16.0.5
     replicaCount: 1
     persistence:
       claimName: forgejo-data
