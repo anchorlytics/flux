@@ -5,3 +5,4 @@ resources:
 - src.yaml
 - helm.yaml
 - values.yaml
+- pvc-jellyfin.yaml

@@ -30,6 +30,8 @@ data:
     - name: tv
       mountPath: /tv
     persistence:
+      config:
+        existingClaim: jellyfin
       media:
         existingClaim: movies
     metrics:
