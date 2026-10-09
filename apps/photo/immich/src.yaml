@@ -6,6 +6,6 @@ metadata:
   name: immich
 spec:
   interval: 24h
-  url: oci://ghcr.io/immich-app/immich-charts/
+  url: oci://ghcr.io/immich-app/immich-charts/immich
   ref:
     tag: 0.13.4
