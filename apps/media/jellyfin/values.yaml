@@ -29,8 +29,10 @@ data:
         drop:
         - "ALL"
     resources:
-      limits:
-        gpu.intel.com/i915: 1
+      requests:
+        cpu: 1000m
+#      limits:
+#        gpu.intel.com/i915: 1
     volumes:
     - name: dri
       hostPath: 
