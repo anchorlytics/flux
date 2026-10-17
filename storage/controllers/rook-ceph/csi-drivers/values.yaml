@@ -1,0 +1,34 @@
+# https://ceph.github.io/ceph-csi-operator/helm-charts/drivers-chart/
+# Template: https://github.com/rook/rook/blob/master/deploy/charts/ceph-csi-drivers/values.yaml
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: helm-values
+data:
+  values.yaml: |
+    operatorConfig:
+      namespace: rook-ceph
+      driverSpecDefaults:
+        imageSet:
+          name: rook-csi-operator-image-set-configmap
+        nodePlugin:
+          priorityClassName: system-node-critical
+        controllerPlugin:
+          priorityClassName: system-cluster-critical
+          replicas: 2
+    drivers:
+      rbd:
+        enabled: true
+        name: rook-ceph.rbd.csi.ceph.com
+        snapshotPolicy: volumeSnapshot
+      cephfs:
+        enabled: true
+        name: rook-ceph.cephfs.csi.ceph.com
+        snapshotPolicy: volumeSnapshot
+      nfs:
+        enabled: true
+        name: rook-ceph.nfs.csi.ceph.com
+      nvmeof:
+        enabled: false
+        name: rook-ceph.nvmeof.csi.ceph.com

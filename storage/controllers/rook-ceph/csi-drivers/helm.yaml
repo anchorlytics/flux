@@ -1,0 +1,19 @@
+# https://github.com/ceph/ceph-csi-operator/releases
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: ceph-csi-drivers
+spec:
+  interval: 10m
+  chart:
+    spec:
+      interval: 2h
+      sourceRef:
+        kind: HelmRepository
+        name: ceph-csi-operator
+      chart: ceph-csi-drivers
+      version: "v1.1.0"
+  valuesFrom:
+  - kind: ConfigMap
+    name: helm-values

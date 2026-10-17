@@ -1,0 +1,27 @@
+# ceph nfs export create cephfs cephnfs /shared shared
+---
+apiVersion: ceph.rook.io/v1
+kind: CephFilesystem
+metadata:
+  name: shared
+  namespace: rook-ceph
+spec:
+  metadataPool:
+    replicated:
+      size: 3
+    deviceClass: ssd
+  dataPools:
+  - name: ssd
+    replicated:
+      size: 3
+    deviceClass: ssd
+  - name: hdd
+    erasureCoded:
+      dataChunks: 2
+      codingChunks: 2
+    deviceClass: hdd
+  preserveFilesystemOnDelete: true
+  metadataServer:
+    activeCount: 1
+    activeStandby: true
+

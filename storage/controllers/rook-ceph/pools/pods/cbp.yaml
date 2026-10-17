@@ -1,0 +1,12 @@
+apiVersion: ceph.rook.io/v1
+kind: CephBlockPool
+metadata:
+  name: pods
+spec:
+  replicated:
+    size: 3
+  parameters:
+    min_size: "2"
+    compression_mode: passive
+  deviceClass: ssd
+
