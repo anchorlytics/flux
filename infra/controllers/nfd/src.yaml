@@ -8,5 +8,5 @@ spec:
   interval: 24h
   url: "oci://registry.k8s.io/nfd/charts/node-feature-discovery"
   ref:
-   semver: "^0.18.3"
+   semver: "^0.20.0"
 
