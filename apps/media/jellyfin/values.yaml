@@ -22,11 +22,25 @@ data:
       - secretName: jellyfin-tls
         hosts:
         - jellyfin.home.seanho.com
+    securityContext:
+      capabilities:
+        add:
+        - "SYS_ADMIN"
+        drop:
+        - "ALL"
+    resources:
+      limits:
+        gpu.intel.com/i915: 1
     volumes:
+    - name: dri
+      hostPath: 
+        path: /dev/dri
     - name: tv
       persistentVolumeClaim:
         claimName: tv
     volumeMounts:
+    - name: dri
+      mountPath: /dev/dri
     - name: tv
       mountPath: /tv
     persistence:
@@ -38,4 +52,5 @@ data:
       enabled: true
       serviceMonitor:
         enabled: true
+
 

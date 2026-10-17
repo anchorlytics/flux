@@ -6,5 +6,3 @@ resources:
 # https://github.com/intel/intel-device-plugins-for-kubernetes/tags
 - "https://github.com/intel/intel-device-plugins-for-kubernetes/deployments/nfd/overlays/node-feature-rules?ref=v0.37.1"
 - "https://github.com/intel/intel-device-plugins-for-kubernetes/deployments/gpu_plugin/overlays/nfd_labeled_nodes?ref=v0.37.1"
-
-# - "https://github.com/intel/intel-device-plugins-for-kubernetes/raw/refs/heads/main/deployments/nfd/overlays/node-feature-rules/node-feature-rules.yaml?ref=v0.37.1"
