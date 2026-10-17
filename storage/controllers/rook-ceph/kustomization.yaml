@@ -6,7 +6,3 @@ resources:
 - ns.yaml
 # - operator
 - csi-drivers
-# - cluster.yaml
-# - config.yaml
-- toolbox.yaml
-# - dashboard.yaml
