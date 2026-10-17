@@ -16,4 +16,4 @@ spec:
       version: "v1.1.0"
   valuesFrom:
   - kind: ConfigMap
-    name: helm-values
+    name: csi-driver-values
