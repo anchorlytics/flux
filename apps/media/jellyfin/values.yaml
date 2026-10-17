@@ -31,18 +31,11 @@ data:
     resources:
       requests:
         cpu: 1000m
-#      limits:
-#        gpu.intel.com/i915: 1
     volumes:
-#    - name: dri
-#      hostPath: 
-#        path: /dev/dri
     - name: tv
       persistentVolumeClaim:
         claimName: tv
     volumeMounts:
-#    - name: dri
-#      mountPath: /dev/dri
     - name: tv
       mountPath: /tv
     persistence:
@@ -55,4 +48,10 @@ data:
       serviceMonitor:
         enabled: true
 
-
+#      limits:
+#        gpu.intel.com/i915: 1
+#    - name: dri
+#      hostPath: 
+#        path: /dev/dri
+#    - name: dri
+#      mountPath: /dev/dri
