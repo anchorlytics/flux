@@ -16,4 +16,4 @@ spec:
       version: "3.2.0"
   valuesFrom:
   - kind: ConfigMap
-    name: helm-values
+    name: jellyfin-values
