@@ -1,0 +1,8 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: kube-vip
+spec:
+  interval: 1d
+  url: "https://kube-vip.github.io/helm-charts"

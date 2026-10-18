@@ -1,0 +1,30 @@
+# https://github.com/kube-vip/helm-charts/blob/main/charts/kube-vip/values.yaml
+# https://github.com/kube-vip/kube-vip/releases
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kube-vip-values
+data:
+  values.yaml: |
+    image:
+      tag: v1.3.0
+    config:
+      address: k8s.k8s.seanho.com
+    env:
+      cp_enable: "true"
+      vip_ddns: "true"
+      vip_leaderelection: "true"
+      enable_node_labeling: "true"
+    envFrom:
+      secretKeyRef:
+        name: kube-vip-config
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+          - matchExpressions:
+            - key: node-role.kubernetes.io/master
+              operator: Exists
+          - matchExpressions:
+            - key: node-role.kubernetes.io/control-plane
+              operator: Exists
