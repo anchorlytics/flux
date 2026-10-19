@@ -13,6 +13,7 @@ data:
       address: k8s.k8s.seanho.com
     env:
       cp_enable: "true"
+      vip_interface: k8s
       vip_ddns: "true"
       vip_leaderelection: "true"
       enable_node_labeling: "true"
