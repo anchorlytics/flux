@@ -17,7 +17,7 @@ data:
       vip_leaderelection: "true"
       enable_node_labeling: "true"
     envFrom:
-    - secretKeyRef:
+    - secretRef:
         name: kube-vip-config
     nodeAffinity:
       requiredDuringSchedulingIgnoredDuringExecution:
