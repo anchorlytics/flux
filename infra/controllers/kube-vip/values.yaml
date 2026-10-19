@@ -10,13 +10,17 @@ data:
     image:
       tag: v1.3.0
     config:
-      address: k8s.k8s.seanho.com
+      address: 10.80.5.5
     env:
-      cp_enable: "true"
+      vip_arp: "true"
       vip_interface: k8s
-      vip_ddns: "true"
       vip_leaderelection: "true"
       enable_node_labeling: "true"
+      bgp_enable: "false"
+      svc_enable: "false"
+      svc_election: "false"
+      lb_enable: "false"
+      cp_enable: "true"
     envFrom:
     - secretRef:
         name: kube-vip-config
@@ -24,9 +28,6 @@ data:
       nodeAffinity:
         requiredDuringSchedulingIgnoredDuringExecution:
           nodeSelectorTerms:
-          - matchExpressions:
-            - key: node-role.kubernetes.io/master
-              operator: Exists
           - matchExpressions:
             - key: node-role.kubernetes.io/control-plane
               operator: Exists
