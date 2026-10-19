@@ -6,5 +6,5 @@ resources:
 - config.yaml
 # - cluster.yaml
 - toolbox.yaml
-# - dashboard.yaml
+- dashboard.yaml
 - pools
