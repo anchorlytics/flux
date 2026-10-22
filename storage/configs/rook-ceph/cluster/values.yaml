@@ -9,25 +9,18 @@ data:
   values.yaml: |
     cephVersion:
       image: quay.io/ceph/ceph:v20.2.4
+    mgr:
+      count: 2
+    mon:
+      count: 3
     dashboard:
       enabled: true
       ssl: false
     monitoring:
       enabled: true
-    mgr:
-      count: 3
-    mon:
-      count: 3
-      allowMultiplePerNode: false
     crashCollector:
       disable: true
     dataDirHostPath: /var/lib/rook
-    resources:
-      osd:
-        requests:
-          memory: 2G
-        limits:
-          memory: 8G
     placement:
       all:
         nodeAffinity:
@@ -52,3 +45,7 @@ data:
       useAllDevices: true
       config:
         encryptedDevice: "true"
+    security:
+      cephx:
+        csi:
+          keyType: aes
