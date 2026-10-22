@@ -1,0 +1,54 @@
+# https://quay.io/repository/ceph/ceph?tab=tags
+# https://github.com/rook/rook/blob/master/deploy/charts/rook-ceph-cluster/values.yaml
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ceph-cluster-values
+data:
+  values.yaml: |
+    cephVersion:
+      image: quay.io/ceph/ceph:v21.1.1
+    dashboard:
+      enabled: true
+      ssl: false
+    monitoring:
+      enabled: true
+    mgr:
+      count: 3
+    mon:
+      count: 3
+      allowMultiplePerNode: false
+    crashCollector:
+      disable: true
+    dataDirHostPath: /var/lib/rook
+    resources:
+      osd:
+        requests:
+          memory: 2G
+        limits:
+          memory: 8G
+    placement:
+      all:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: role
+                operator: In
+                values:
+                  - ceph
+      osd:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: ceph-role
+                operator: In
+                values:
+                  - osd
+    storage:
+      useAllNodes: true
+      useAllDevices: true
+      config:
+        encryptedDevice: "true"

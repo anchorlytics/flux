@@ -4,7 +4,7 @@ kind: Kustomization
 namespace: rook-ceph
 resources:
 - config.yaml
-- cluster.yaml
+- cluster
 - toolbox.yaml
 - dashboard.yaml
 - pools
