@@ -8,7 +8,7 @@ metadata:
 data:
   values.yaml: |
     cephVersion:
-      image: quay.io/ceph/ceph:v20.2.4
+      image: quay.io/ceph/ceph:v21.1.1
     mgr:
       count: 2
     mon:
