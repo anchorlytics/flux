@@ -1,0 +1,20 @@
+# https://github.com/rook/rook/releases
+# https://github.com/rook/rook/blob/master/deploy/charts/rook-ceph/values.yaml
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ceph-operator-values
+data:
+  values.yaml: |
+    image:
+      tag: v1.21.1
+    currentNamespaceOnly: true
+    discover:
+      nodeAffinity: ceph-role=osd
+    enableDiscoveryDaemon: true
+    monitoring:
+      enabled: true
+    csi:
+      nfs:
+        enabled: true
