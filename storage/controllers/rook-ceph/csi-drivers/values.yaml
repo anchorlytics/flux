@@ -32,3 +32,29 @@ data:
       nvmeof:
         enabled: false
         name: rook-ceph.nvmeof.csi.ceph.com
+    cephConnections:
+    - name: ceph-connection
+      monitors:
+        cl: "10.43.245.51:6789"
+        cn: "10.43.178.87:6789"
+        cp: "10.43.193.249:6789"
+    clientProfiles:
+    - name: rook-ceph
+      cephConnection:
+        name: ceph-connection
+      cephFs:
+        cephCsiSecrets:
+          controllerPublishSecret:
+            name: rook-csi-cephfs-provisioner
+            namespace: rook-ceph
+          nodePublishSecret:
+            name: rook-csi-cephfs-node
+            namespace: rook-ceph
+      rbd:
+        cephCsiSecrets:
+          controllerPublishSecret:
+            name: rook-csi-rbd-provisioner
+            namespace: rook-ceph
+          nodePublishSecret:
+            name: rook-csi-rbd-node
+            namespace: rook-ceph
