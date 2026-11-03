@@ -13,6 +13,8 @@ data:
       count: 2
     mon:
       count: 3
+    toolbox:
+      enabled: true
     dashboard:
       enabled: true
       ssl: false
@@ -23,23 +25,12 @@ data:
     dataDirHostPath: /var/lib/rook
     placement:
       all:
-        nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-            - matchExpressions:
-              - key: role
-                operator: In
-                values:
-                  - ceph
+        nodeSelector:
+          role: ceph
+          "feature.node.kubernetes.io/cpu-cpuid.AVX2": "true"
       osd:
-        nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-            - matchExpressions:
-              - key: ceph-role
-                operator: In
-                values:
-                  - osd
+        nodeSelector:
+          ceph-role: osd
     storage:
       useAllNodes: true
       useAllDevices: true
