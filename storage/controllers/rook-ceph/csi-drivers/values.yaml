@@ -25,6 +25,8 @@ data:
                     operator: In
                     values:
                     - ceph
+                  - key: "feature.node.kubernetes.io/cpu-cpuid.X86_64_V3"
+                    operator: Exists
         controllerPlugin:
           priorityClassName: system-cluster-critical
           replicas: 2
@@ -39,6 +41,8 @@ data:
                     operator: In
                     values:
                     - ceph
+                  - key: "feature.node.kubernetes.io/cpu-cpuid.X86_64_V3"
+                    operator: Exists
     drivers:
       rbd:
         enabled: true
