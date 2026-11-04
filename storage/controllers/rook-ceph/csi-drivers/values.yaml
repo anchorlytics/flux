@@ -65,7 +65,7 @@ data:
       cephConnection:
         name: ceph-connection
       cephFs:
-        subVolumeGroup: ""
+        subVolumeGroup: csi
         cephCsiSecrets:
           controllerPublishSecret:
             name: rook-csi-cephfs-provisioner
