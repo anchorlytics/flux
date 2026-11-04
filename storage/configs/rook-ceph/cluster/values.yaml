@@ -25,12 +25,29 @@ data:
     dataDirHostPath: /var/lib/rook
     placement:
       all:
-        nodeSelector:
-          role: ceph
-          "feature.node.kubernetes.io/cpu-cpuid.AVX2": "true"
+        affinity:
+          nodeAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: role
+                operator: In
+                values:
+                - ceph
+              - key: "feature.node.kubernetes.io/cpu-cpuid.AVX2"
+                operator: In
+                values:
+                - "true"
       osd:
-        nodeSelector:
-          ceph-role: osd
+        affinity:
+          nodeAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: ceph-role
+                operator: In
+                values:
+                - osd
     storage:
       useAllNodes: true
       useAllDevices: true
