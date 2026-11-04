@@ -19,12 +19,12 @@ data:
           affinity:
             nodeAffinity:
               requiredDuringSchedulingIgnoredDuringExecution:
-              nodeSelectorTerms:
-              - matchExpressions:
-                - key: role
-                  operator: In
-                  values:
-                  - ceph
+                nodeSelectorTerms:
+                - matchExpressions:
+                  - key: role
+                    operator: In
+                    values:
+                    - ceph
         controllerPlugin:
           priorityClassName: system-cluster-critical
           replicas: 2
@@ -33,12 +33,12 @@ data:
           affinity:
             nodeAffinity:
               requiredDuringSchedulingIgnoredDuringExecution:
-              nodeSelectorTerms:
-              - matchExpressions:
-                - key: role
-                  operator: In
-                  values:
-                  - ceph
+                nodeSelectorTerms:
+                - matchExpressions:
+                  - key: role
+                    operator: In
+                    values:
+                    - ceph
     drivers:
       rbd:
         enabled: true
