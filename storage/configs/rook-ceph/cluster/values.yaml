@@ -8,7 +8,7 @@ metadata:
 data:
   values.yaml: |
     cephImage:
-      tag: v21.1.1
+      tag: v21.2.0
     toolbox:
       enabled: true
       affinity:

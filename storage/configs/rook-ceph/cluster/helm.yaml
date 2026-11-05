@@ -13,7 +13,7 @@ spec:
         kind: HelmRepository
         name: rook
       chart: rook-ceph-cluster
-      version: "v1.21.0"
+      version: "v1.21.1"
   valuesFrom:
   - kind: ConfigMap
     name: ceph-cluster-values
