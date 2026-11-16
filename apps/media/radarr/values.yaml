@@ -8,7 +8,7 @@ metadata:
 data:
   values.yaml: |
     image:
-      tag: 6.4.4
+      tag: 7.0.3
     volumes:
     - name: appdata
       persistentVolumeClaim:
