@@ -13,4 +13,5 @@ spec:
     requests:
       storage: 10G
   storageClassName: shared-ssd
+  volumeName: pvc-365f74e0-3f07-4540-a911-30f15eb05bc6
 
