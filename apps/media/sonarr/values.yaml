@@ -1,32 +1,26 @@
 # https://github.com/anchorlytics/charts/blob/main/sonarr/values.yaml
-# https://github.com/linuxserver/docker-sonarr/releases
 ---
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: sonarr-values
-data:
-  values.yaml: |
-    image:
-      tag: 4.0.20
-    volumes:
-    - name: appdata
-      persistentVolumeClaim:
-        claimName: sonarr
-    - name: usenet
-      persistentVolumeClaim:
-        claimName: usenet
-    - name: tv
-      persistentVolumeClaim:
-        claimName: tv
-    volumeMounts:
-    - name: usenet
-      mountPath: /usenet
-    - name: tv
-      mountPath: /tv
-    ingress:
-      enabled: true
-      host: sonarr.home.seanho.com
-      annotations:
-        cert-manager.io/cluster-issuer: le-prod
-        nginx.ingress.kubernetes.io/proxy-body-size: 1m
+image:
+  # https://github.com/linuxserver/docker-sonarr/releases
+  tag: 4.0.20
+volumes:
+- name: appdata
+  persistentVolumeClaim:
+    claimName: sonarr
+- name: usenet
+  persistentVolumeClaim:
+    claimName: usenet
+- name: tv
+  persistentVolumeClaim:
+    claimName: tv
+volumeMounts:
+- name: usenet
+  mountPath: /usenet
+- name: tv
+  mountPath: /tv
+ingress:
+  enabled: true
+  host: sonarr.home.seanho.com
+  annotations:
+    cert-manager.io/cluster-issuer: le-prod
+    nginx.ingress.kubernetes.io/proxy-body-size: 1m
