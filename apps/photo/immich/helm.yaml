@@ -10,4 +10,4 @@ spec:
     name: immich
   valuesFrom:
   - kind: ConfigMap
-    name: helm-values
+    name: immich-values

@@ -1,58 +1,52 @@
 # https://github.com/immich-app/immich-charts/blob/main/charts/immich/values.yaml
-# https://github.com/immich-app/immich
 ---
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: helm-values
-data:
-  values.yaml: |
-    controllers:
+controllers:
+  main:
+    containers:
       main:
-        containers:
-          main:
-            image:
-              tag: v3.2.4
-            env:
-            - name: DB_HOSTNAME
-              value: immich-db-rw
-            - name: DB_USERNAME
-              valueFrom:
-                secretKeyRef:
-                  name: immich-db-app
-                  key: username
-            - name: DB_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: immich-db-app
-                  key: password
-            - name: REDIS_HOSTNAME
-              value: immich-valkey
-    immich:
-      metrics:
-        enabled: true
-      persistence:
-        library:
-          existingClaim: photos
-    server:
-      ingress:
-        main:
-          enabled: true
-          hosts:
-          - host: photo.home.seanho.com
-            paths:
-            - path: /
-          tls:
-          - secretName: immich-tls
-            hosts:
-            - photo.home.seanho.com
-          annotations:
-            cert-manager.io/cluster-issuer: le-prod
-            nginx.ingress.kubernetes.io/proxy-body-size: 4g
-    machine-learning:
-      persistence:
-        cache:
-          type: persistentVolumeClaim
-          existingClaim: cache
-    valkey:
+        image:
+          # https://github.com/immich-app/immich/releases
+          tag: v3.4.2
+        env:
+        - name: DB_HOSTNAME
+          value: immich-db-rw
+        - name: DB_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: immich-db-app
+              key: username
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: immich-db-app
+              key: password
+        - name: REDIS_HOSTNAME
+          value: immich-valkey
+immich:
+  metrics:
+    enabled: true
+  persistence:
+    library:
+      existingClaim: photos
+server:
+  ingress:
+    main:
       enabled: true
+      hosts:
+      - host: photo.home.seanho.com
+        paths:
+        - path: /
+      tls:
+      - secretName: immich-tls
+        hosts:
+        - photo.home.seanho.com
+      annotations:
+        cert-manager.io/cluster-issuer: le-prod
+        nginx.ingress.kubernetes.io/proxy-body-size: 4g
+machine-learning:
+  persistence:
+    cache:
+      type: persistentVolumeClaim
+      existingClaim: cache
+valkey:
+  enabled: true

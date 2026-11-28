@@ -4,8 +4,13 @@ kind: Kustomization
 resources:
 - src.yaml
 - helm.yaml
-- values.yaml
 - db.yaml
 - db-cluster.yaml
 - pvc-photos.yaml
 - pvc-cache.yaml
+configMapGenerator:
+- name: immich-values
+  files:
+  - values.yaml
+configurations:
+- kustomizeconfig.yaml
