@@ -1,57 +1,51 @@
 # https://codeberg.org/forgejo/-/packages/container/forgejo/versions
 ---
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: helm-values
-data:
-  values.yaml: |
-    image:
-      tag: 16.0.5
-    replicaCount: 1
-    persistence:
-      claimName: forgejo-data
-      size: 20Gi
-      storageClass: shared-ssd
-      accessModes: 
-      - ReadWriteMany
-    postgresql-ha:
-      enabled: false
-    gitea:
-      admin:
-        existingSecret: forgejo-admin
-      config:
-        APP_NAME: "Anchorlytics Code"
-        repository:
-          ROOT: repos
-          ENABLE_PUSH_CREATE_USER: true
-        security:
-          INSTALL_LOCK: true
-        server:
-          PPROF_ENABLED: true
-          DISABLE_SSH: true
-        "cron.GIT_GC_REPOS": 
-          ENABLED: false
-        actions:
-          ENABLED: true
-        database:
-          DB_TYPE: postgres
-          HOST: forgejo-db-rw:5432
-          NAME: forgejo
-      metrics:
-        enabled: true
-        serviceMonitor:
-          enabled: true
-    ingress:
+image:
+  tag: 17.0.2
+replicaCount: 1
+persistence:
+  claimName: forgejo-data
+  size: 20Gi
+  storageClass: shared-ssd
+  accessModes: 
+  - ReadWriteMany
+postgresql-ha:
+  enabled: false
+gitea:
+  admin:
+    existingSecret: forgejo-admin
+  config:
+    APP_NAME: "Anchorlytics Code"
+    repository:
+      ROOT: repos
+      ENABLE_PUSH_CREATE_USER: true
+    security:
+      INSTALL_LOCK: true
+    server:
+      PPROF_ENABLED: true
+      DISABLE_SSH: true
+    "cron.GIT_GC_REPOS": 
+      ENABLED: false
+    actions:
+      ENABLED: true
+    database:
+      DB_TYPE: postgres
+      HOST: forgejo-db-rw:5432
+      NAME: forgejo
+  metrics:
+    enabled: true
+    serviceMonitor:
       enabled: true
-      hosts:
-      - host: code.home.seanho.com
-        paths:
-        - path: /
-          pathType: Prefix
-      tls:
-      - secretName: forgejo-tls
-        hosts:
-        - code.home.seanho.com
-      annotations:
-        cert-manager.io/cluster-issuer: le-prod
+ingress:
+  enabled: true
+  hosts:
+  - host: code.home.seanho.com
+    paths:
+    - path: /
+      pathType: Prefix
+  tls:
+  - secretName: forgejo-tls
+    hosts:
+    - code.home.seanho.com
+  annotations:
+    cert-manager.io/cluster-issuer: le-prod

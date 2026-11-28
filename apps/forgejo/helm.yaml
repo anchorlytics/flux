@@ -10,6 +10,6 @@ spec:
     name: forgejo
   valuesFrom:
   - kind: ConfigMap
-    name: helm-values
+    name: forgejo-values
   - kind: Secret
     name: values-db

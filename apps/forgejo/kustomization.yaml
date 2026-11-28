@@ -6,6 +6,11 @@ resources:
 - ns.yaml
 - src.yaml
 - helm.yaml
-- values.yaml
 - secret.yaml
 - db.yaml
+configMapGenerator:
+- name: forgejo-values
+  files:
+  - values.yaml
+configurations:
+- kustomizeconfig.yaml
