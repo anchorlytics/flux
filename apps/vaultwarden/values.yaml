@@ -1,41 +1,35 @@
 # https://github.com/gissilabs/charts/blob/master/vaultwarden/values.yaml
-# new users: enable as recipient in mailgun
 ---
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: helm-values
-data:
-  values.yaml: |
-    image:
-      tag: 1.37.4 # https://github.com/dani-garcia/vaultwarden/releases
-    vaultwarden:
-      domain: "https://pw.home.seanho.com"
-      allowSignups: false
-      passwordHintsAllowed: false
-      emailChangeAllowed: false
-      orgCreationUsers: none
-      admin:
-        enabled: true
-        existingSecret: vaultwarden-pw
-      smtp:
-        enabled: true
-        existingSecret: vaultwarden-pw
-        host: smtp.mailgun.org
-        from: vaultwarden@seanho.com
-        heloName: pw.home.seanho.com
-    ingress:
-      enabled: true
-      host: pw.home.seanho.com
-      tls:
-      - secretName: vaultwarden-tls
-        hosts:
-        - pw.home.seanho.com
-      annotations:
-        cert-manager.io/cluster-issuer: le-prod
-        nginx.ingress.kubernetes.io/proxy-body-size: 20m
-    persistence:
-      enabled: true
-      size: 2Gi
-      storageClass: shared-ssd
+image:
+  # https://github.com/dani-garcia/vaultwarden/releases
+  tag: 1.37.5 
+vaultwarden:
+  domain: "https://pw.home.seanho.com"
+  allowSignups: false
+  passwordHintsAllowed: false
+  emailChangeAllowed: false
+  orgCreationUsers: none
+  admin:
+    enabled: true
+    existingSecret: vaultwarden-pw
+  smtp:
+    enabled: true
+    existingSecret: vaultwarden-pw
+    host: smtp.mailgun.org
+    from: vaultwarden@seanho.com
+    heloName: pw.home.seanho.com
+ingress:
+  enabled: true
+  host: pw.home.seanho.com
+  tls:
+  - secretName: vaultwarden-tls
+    hosts:
+    - pw.home.seanho.com
+  annotations:
+    cert-manager.io/cluster-issuer: le-prod
+    nginx.ingress.kubernetes.io/proxy-body-size: 20m
+persistence:
+  enabled: true
+  size: 2Gi
+  storageClass: shared-ssd
 

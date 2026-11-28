@@ -16,4 +16,4 @@ spec:
       version: "1.4.2"
   valuesFrom:
   - kind: ConfigMap
-    name: helm-values
+    name: vaultwarden-values
